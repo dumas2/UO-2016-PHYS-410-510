@@ -1,0 +1,5 @@
+1 degree lat = 111.2km
+so 1km = 1/111.2 degrees lat
+
+1 degree long = 111.3 cos(lat) km
+so 1km = 1/(111.3 cos(lat)) degrees long

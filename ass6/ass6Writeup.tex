@@ -1,0 +1,224 @@
+\documentclass{article}
+\usepackage{graphicx}
+\begin{document}
+\title{Assignment 3 -ver 2- includes section 8}
+
+\author{William Dumas}
+\maketitle
+
+\section{Section 1}
+I downloaded the data.
+I used vi to look at the data. By pressing shift-g I was transported
+to the end of the file. By pressing ctrl-g g ctrl-g, I was informed
+there are 4535 lines, 9070 words and 97569 bytes. 
+
+\begin{table}[b]
+\begin{tabular}{| l | l | l | l | l |}
+\hline
+\multicolumn{5}{|c|}{Table 1 - Image A} \\
+\hline
+min & max & unique values & Mean & Median \\
+\hline
+42.400002 & 205.50000        &    1594     & xxx              & xxx         \\
+\hline      
+\end{tabular}
+\caption*{For imageA}
+\end{table}
+
+
+
+\section{Section 2}
+I wrote a script in bash that performs the task.
+\begin{verbatim}
+#!/bin/bash
+datdir="$HOME/SciProgStuff/ass5/"
+
+datfile0="posit.txt"
+datfile1="positNumbered.txt"
+datfile2="cityList.dat"
+datfile3="cityLoc.dat"
+
+
+awk '{print NR,$0}' $datfile0 > $datfile1
+
+
+list="Washington Oregon Idaho Montana California"
+
+# finds the cities in 
+echo "Bucket List: Go to ..."
+ for state in $(echo $list);do
+  grep $state $datfile1  >>destinations
+ done
+
+cat destinations 
+cat destinations | shuf > route
+awk '{ print $1}' route > routeID
+echo "__________________________"
+echo " "
+echo "I think I'll start in "
+awk 'NR==1' route
+echo " ______ "
+echo "and subsequently travel to "
+numc=$(wc route | awk '{ print $1-1 }')
+tail -n $numc route
+echo " "
+echo "before I return home to" $(echo $(head -n 1 route))
+awk '{$NF=$(NF-1)=" " }1' route  > $datfile2
+awk '{print $1 FS FS $(NF-1) FS FS $NF}' route > $datfile3
+#####################################################
+
+cat $datfile3 > trip
+head -n 1 $datfile3 >> trip
+
+gnuplot <<EOF
+#set yrange [-158:-65]
+#set xrange [20:60]
+set xlabel "Longitude"
+set ylabel "Latitude"
+set output 'trip.eps'
+set term postscript color enhanced
+plot 'trip' u 3:2 w lines,"< head -1 trip" u 3:2 pt 3 ps 5
+q
+
+EOF
+
+evince trip.eps &
+######################################
+echo " "
+echo "trip data"
+cat trip | dist2
+
+rm -rf route destinations 
+
+
+\end{verbatim}
+\section{all routes}
+\begin{verbatim}
+          37          26          12          47           5   3419.3538    
+          37          26          12           5          47   3010.1445    
+          37          26          47          12           5   4255.4102    
+          37          26          47           5          12   4361.2974    
+          37          26           5          12          47   3881.7881    
+          37          26           5          47          12   4396.8848    
+          37          12          26          47           5   3396.8494    
+          37          12          26           5          47   3023.2273    
+          37          12          47          26           5   4268.4932    
+          37          12           5          26          47   3859.2839    
+          37          47          26          12           5   2881.7527    
+          37          47          12          26           5   2917.3398    
+
+
+where the number above matches with the left column below. And the rightmost
+column above is the trip distance in meters.
+47 Washington	Olympia	47.042418	-122.893077
+37 Oregon	Salem	44.931109	-123.029159
+12 Idaho	Boise	43.613739	-116.237651
+26 Montana	Helana	46.595805	-112.027031
+5 California	Sacramento	38.555605	-121.468926
+\end{verbatim}
+Didn't get to the 2-opt switch.
+Some timing, the random route took 0m0.088s to run. It generates the plot 
+in figure 1 from the data file that's downloaded. Doesn't calculate distances.
+
+For the 5 random took 0m0.150s to run. It generates the plot and calculates the
+distances.
+
+For the 7 random took 0m0.156s to run. It generates the plot and calculates the minimum distance. 
+
+
+\begin{figure}[ht]
+\includegraphics[width=\linewidth,angle=270]{trip.eps}
+\caption{  }
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth,angle=270]{tripMin.eps}
+\caption{}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=\linewidth,angle=270]{tripMin7.eps}
+\caption{}
+\end{figure}
+
+\begin{verbatim}
+#!/bin/bash
+datdir="$HOME/SciProgStuff/ass5/"
+
+datfile0="posit.txt"
+datfile1="positNumbered.txt"
+datfile2="cityList.dat"
+datfile3="cityLoc.dat"
+
+
+awk '{print NR,$0}' $datfile0 > $datfile1
+
+
+list="Washington Oregon Idaho Montana California"
+
+# finds the cities in 
+echo "Bucket List: Go to ..."
+ for state in $(echo $list);do
+  grep $state $datfile1  >>destinations
+ done
+
+cat destinations 
+cat destinations | shuf > route
+awk '{ print $1}' route > routeID
+awk '{$NF=$(NF-1)=" " }1' route  > $datfile2
+awk '{print $1 FS FS $(NF-1) FS FS $NF}' route > $datfile3
+#####################################################
+
+cat $datfile3 | $(echo allRoute)>tmp 
+sort -n -k6 tmp | head -1 | awk '{$NF=" ";print $0}'>tmp2
+sort -n -k6 tmp | head -1 | awk '{print $1}' >>tmp2
+sort -n -k6 tmp | head -1  >tmp3
+for i in $(cat tmp2);do
+#echo $i
+awk -v var=$i '{if($1==var) print $1 FS $2 FS $3}' cityLoc.dat >>trip
+done
+for i in $(cat tmp2);do
+#echo $i
+awk -v var=$i '{if($1==var) print $0 }' $datfile1  >>trip2
+done
+
+echo "__________________________"
+echo " "
+echo "I think I'll start in "
+!awk 'NR==1' route
+awk 'NR==1' trip2
+echo " ______ "
+echo "and subsequently travel to "
+numc=$(wc trip2 | awk '{ print $1-1 }')
+tail -n $numc trip2
+echo " "
+echo "before I return home to" $(echo $(head -n 1 trip2))
+
+totalDist=$(awk '{print $NF }' tmp3)
+echo 'total distance ' $totalDist
+
+
+gnuplot <<EOF
+#set yrange [-158:-65]
+#set xrange [20:60]
+set xlabel "Longitude"
+set ylabel "Latitude"
+set title "Distance = $totalDist"
+
+set output 'tripMin7.eps'
+
+set term postscript color enhanced
+plot 'trip' u 3:2 title "Distance = $totalDist" w lines,"< head -1 trip" u 3:2  pt 3 ps 5
+q
+
+EOF
+
+evince tripMin7.eps &
+######################################
+
+rm -rf route destinations trip trip2
+
+
+\end{verbatim}
+
+\end{document}

@@ -1,0 +1,89 @@
+GFORTRAN module version '6' created from modules.f90 on Wed May  4 16:46:16 2016
+MD5:adfbb298ac0341d2cd526e564501870b -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () () () () () () () ()
+() () ())
+
+()
+
+()
+
+()
+
+()
+
+()
+
+(2 'boxslider' 'modules' 'boxslider' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 UNKNOWN ()) 3 0
+(4 5 6 7 8 9 10) () 0 () () () 0 0)
+11 'calcbounds' 'modules' 'calcbounds' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 UNKNOWN ()) 12 0
+(13 14 15 16 17 18 19) () 0 () () () 0 0)
+20 'calcdist' 'modules' 'calcdist' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 UNKNOWN ()) 21 0
+(22 23 24 25 26) () 0 () () () 0 0)
+27 'modules' 'modules' 'modules' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+28 'testcount' 'modules' 'testcount' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 UNKNOWN ()) 29 0
+(30 31 32 33 34 35 36) () 0 () () () 0 0)
+4 's' '' 's' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+5 'latstart' '' 'latstart' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+6 'latfin' '' 'latfin' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+7 'longstart' '' 'longstart' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+8 'longfin' '' 'longfin' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+9 'count' '' 'count' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+10 'a' '' 'a' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
+DUMMY) (REAL 4 0 0 REAL ()) 0 0 () (2 0 EXPLICIT (CONSTANT (INTEGER 4 0
+0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '5000') (
+CONSTANT (INTEGER 4 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0
+INTEGER ()) 0 '2')) 0 () () () 0 0)
+23 'la2' '' 'la2' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+30 'lat1' '' 'lat1' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+31 'long1' '' 'long1' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+32 'blat1' '' 'blat1' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+33 'blat2' '' 'blat2' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+34 'blong1' '' 'blong1' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+35 'blong2' '' 'blong2' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+36 'count' '' 'count' 29 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (INTEGER 4 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+13 's' '' 's' 12 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+14 'latstart' '' 'latstart' 12 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+15 'longstart' '' 'longstart' 12 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+16 'blat1' '' 'blat1' 12 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+17 'blat2' '' 'blat2' 12 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+18 'blong1' '' 'blong1' 12 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+19 'blong2' '' 'blong2' 12 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+22 'la1' '' 'la1' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+24 'lo1' '' 'lo1' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+25 'lo2' '' 'lo2' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+26 'dist' '' 'dist' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 4 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+)
+
+('boxslider' 0 2 'calcbounds' 0 11 'calcdist' 0 20 'modules' 0 27
+'testcount' 0 28)
